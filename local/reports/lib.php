@@ -8,7 +8,7 @@
 function local_reports_course($user) {
     try {
         global $DB;
-        print_r(1);die;
+        print_r(22);die;
     } catch (Exception $e) {
         
     }
