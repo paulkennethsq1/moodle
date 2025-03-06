@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="mt-4" id="report-container">
+    <div class="report">
+        <h2 class="mb-5">Courses Reports</h2>
+        <div class="row align-items-center mb-3">
+            <label for="report_select" class="col-3 font-weight-bold">Select a course</label>
+            <div class="col-3">
+                <select name="report_select" id="report_select" class="form-control">
+                    {{#report}}
+                        <option value="{{value}}">{{label}}</option>
+                    {{/report}}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 offset-5">
+                <button type="submit" class="btn btn-primary" id="button">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
