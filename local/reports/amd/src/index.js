@@ -11,11 +11,20 @@
 // });
 
 define([
-    "jquery",
-    "core/ajax",
+  'jquery',
+  // 'core/str',
+  'core/ajax',
+  'core/url',
+  'core/notification',
+  // 'core/st_loader',
+
   ], function(
     $,
+    // str,
     ajax,
+    moodleurl,
+    // notification,
+    // stLoader,
   ) {
       var index = {
           dom: {
@@ -365,11 +374,12 @@ define([
           },
           init: function() {
               index.dom.main = $(document).find("#report-container");
-              index.dom.submit = index.dom.main.find("button");
-
-              
+              index.dom.submit = index.dom.main.find("button");    
               index.dom.submit.on("click", function() {
-                index.actions.url();
+                window.location = moodleurl.relativeUrl(
+                  '/local/reports/user_list.php?id=' + 3
+              );
+
               });
           },
       };

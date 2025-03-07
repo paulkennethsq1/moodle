@@ -7,9 +7,9 @@
             <label for="report_select" class="col-3 font-weight-bold">Select a course</label>
             <div class="col-3">
                 <select name="report_select" id="report_select" class="form-control">
-                    {{#report}}
-                        <option value="{{value}}">{{label}}</option>
-                    {{/report}}
+                    {{#courses}}
+                        <option value="{{id}}">{{fullname}}</option>
+                    {{/courses}}
                 </select>
             </div>
         </div>

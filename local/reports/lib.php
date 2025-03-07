@@ -13,3 +13,21 @@ function local_reports_course($user) {
         
     }
 }
+
+function local_reports_get_courses() {
+    try {
+        global $DB, $USER;
+
+        $sql = "SELECT id,
+            fullname
+            FROM {course} c
+            WHERE c.category = 5";
+        $result = $DB->get_records_sql($sql);
+        
+        return array_values($result);
+    } catch (Exception $e) {
+        local_micro_learning_exception_logs(
+            'micro_learning_lib: local_micro_learning_ml_lib_get_smtps'
+        );
+    }
+}

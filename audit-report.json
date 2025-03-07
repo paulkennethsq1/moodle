@@ -1,0 +1,1008 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "boom": {
+      "name": "boom",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "hoek"
+      ],
+      "effects": [
+        "cryptiles",
+        "hawk"
+      ],
+      "range": "<=3.1.2",
+      "nodes": [
+        "node_modules/boom"
+      ],
+      "fixAvailable": false
+    },
+    "clean-css": {
+      "name": "clean-css",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1091669,
+          "name": "clean-css",
+          "dependency": "clean-css",
+          "title": "Regular Expression Denial of Service in clean-css",
+          "url": "https://github.com/advisories/GHSA-wxhq-pm8v-cw75",
+          "severity": "low",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<4.1.11"
+        }
+      ],
+      "effects": [
+        "less"
+      ],
+      "range": "<4.1.11",
+      "nodes": [
+        "node_modules/clean-css"
+      ],
+      "fixAvailable": false
+    },
+    "cli": {
+      "name": "cli",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1090893,
+          "name": "cli",
+          "dependency": "cli",
+          "title": "Arbitrary File Write in cli",
+          "url": "https://github.com/advisories/GHSA-6cpc-mj5c-m9rq",
+          "severity": "low",
+          "cwe": [
+            "CWE-22"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<1.0.0"
+        },
+        "glob"
+      ],
+      "effects": [
+        "jshint"
+      ],
+      "range": "<=0.11.3",
+      "nodes": [
+        "node_modules/gear-lib/node_modules/cli"
+      ],
+      "fixAvailable": false
+    },
+    "cryptiles": {
+      "name": "cryptiles",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "boom"
+      ],
+      "effects": [
+        "hawk"
+      ],
+      "range": "<=2.0.5",
+      "nodes": [
+        "node_modules/cryptiles"
+      ],
+      "fixAvailable": false
+    },
+    "debug": {
+      "name": "debug",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1094457,
+          "name": "debug",
+          "dependency": "debug",
+          "title": "debug Inefficient Regular Expression Complexity vulnerability",
+          "url": "https://github.com/advisories/GHSA-9vvw-cc9w-f27h",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<2.6.9"
+        },
+        {
+          "source": 1096795,
+          "name": "debug",
+          "dependency": "debug",
+          "title": "Regular Expression Denial of Service in debug",
+          "url": "https://github.com/advisories/GHSA-gxpj-cx7g-858c",
+          "severity": "low",
+          "cwe": [
+            "CWE-400"
+          ],
+          "cvss": {
+            "score": 3.7,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+          },
+          "range": "<2.6.9"
+        }
+      ],
+      "effects": [
+        "knox"
+      ],
+      "range": "<=2.6.8",
+      "nodes": [
+        "node_modules/knox/node_modules/debug"
+      ],
+      "fixAvailable": false
+    },
+    "form-data": {
+      "name": "form-data",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "mime"
+      ],
+      "effects": [
+        "request"
+      ],
+      "range": "0.0.2 - 0.1.4",
+      "nodes": [
+        "node_modules/form-data"
+      ],
+      "fixAvailable": false
+    },
+    "gear-lib": {
+      "name": "gear-lib",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "glob",
+        "handlebars",
+        "jshint",
+        "jslint",
+        "knox",
+        "less",
+        "mime",
+        "uglify-js"
+      ],
+      "effects": [
+        "shifter"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/gear-lib"
+      ],
+      "fixAvailable": false
+    },
+    "glob": {
+      "name": "glob",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "minimatch"
+      ],
+      "effects": [
+        "cli",
+        "gear-lib",
+        "jslint"
+      ],
+      "range": "3.0.0 - 5.0.14",
+      "nodes": [
+        "node_modules/gear-lib/node_modules/glob",
+        "node_modules/jslint/node_modules/glob"
+      ],
+      "fixAvailable": false
+    },
+    "handlebars": {
+      "name": "handlebars",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1086649,
+          "name": "handlebars",
+          "dependency": "handlebars",
+          "title": "Arbitrary Code Execution in handlebars",
+          "url": "https://github.com/advisories/GHSA-q2c6-c6pm-g3gh",
+          "severity": "high",
+          "cwe": [],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<3.0.8"
+        },
+        {
+          "source": 1086651,
+          "name": "handlebars",
+          "dependency": "handlebars",
+          "title": "Prototype Pollution in handlebars",
+          "url": "https://github.com/advisories/GHSA-g9r4-xpmj-mj65",
+          "severity": "high",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<3.0.8"
+        },
+        {
+          "source": 1087652,
+          "name": "handlebars",
+          "dependency": "handlebars",
+          "title": "Cross-Site Scripting in handlebars",
+          "url": "https://github.com/advisories/GHSA-9prh-257w-9277",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-79"
+          ],
+          "cvss": {
+            "score": 6.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+          },
+          "range": "<4.0.0"
+        },
+        {
+          "source": 1095063,
+          "name": "handlebars",
+          "dependency": "handlebars",
+          "title": "Remote code execution in handlebars when compiling templates",
+          "url": "https://github.com/advisories/GHSA-f2jv-r9rf-7988",
+          "severity": "critical",
+          "cwe": [
+            "CWE-94"
+          ],
+          "cvss": {
+            "score": 9.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<4.7.7"
+        },
+        {
+          "source": 1095065,
+          "name": "handlebars",
+          "dependency": "handlebars",
+          "title": "Arbitrary Code Execution in Handlebars",
+          "url": "https://github.com/advisories/GHSA-3cqr-58rm-57f8",
+          "severity": "high",
+          "cwe": [
+            "CWE-94"
+          ],
+          "cvss": {
+            "score": 8.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:L/A:L"
+          },
+          "range": "<3.0.8"
+        },
+        {
+          "source": 1095066,
+          "name": "handlebars",
+          "dependency": "handlebars",
+          "title": "Prototype Pollution in handlebars",
+          "url": "https://github.com/advisories/GHSA-q42p-pg8m-cqh6",
+          "severity": "high",
+          "cwe": [
+            "CWE-471"
+          ],
+          "cvss": {
+            "score": 7.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+          },
+          "range": "<3.0.7"
+        },
+        {
+          "source": 1096405,
+          "name": "handlebars",
+          "dependency": "handlebars",
+          "title": "Arbitrary Code Execution in handlebars",
+          "url": "https://github.com/advisories/GHSA-2cf5-4w76-r9qv",
+          "severity": "high",
+          "cwe": [
+            "CWE-94"
+          ],
+          "cvss": {
+            "score": 7.3,
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:L/I:H/A:L"
+          },
+          "range": "<3.0.8"
+        },
+        {
+          "source": 1102331,
+          "name": "handlebars",
+          "dependency": "handlebars",
+          "title": "Prototype Pollution in handlebars",
+          "url": "https://github.com/advisories/GHSA-w457-6q6x-cgp9",
+          "severity": "critical",
+          "cwe": [
+            "CWE-74",
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 9.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<3.0.8"
+        },
+        {
+          "source": 1102335,
+          "name": "handlebars",
+          "dependency": "handlebars",
+          "title": "Prototype Pollution in handlebars",
+          "url": "https://github.com/advisories/GHSA-765h-qjxv-5f44",
+          "severity": "critical",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 9.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<4.7.7"
+        },
+        "uglify-js"
+      ],
+      "effects": [
+        "gear-lib"
+      ],
+      "range": "<=4.7.6",
+      "nodes": [
+        "node_modules/gear-lib/node_modules/handlebars"
+      ],
+      "fixAvailable": false
+    },
+    "hawk": {
+      "name": "hawk",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1091678,
+          "name": "hawk",
+          "dependency": "hawk",
+          "title": "Regular Expression Denial of Service in hawk",
+          "url": "https://github.com/advisories/GHSA-jcpv-g9rr-qxrc",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<3.1.3"
+        },
+        {
+          "source": 1095062,
+          "name": "hawk",
+          "dependency": "hawk",
+          "title": "Uncontrolled Resource Consumption in Hawk",
+          "url": "https://github.com/advisories/GHSA-44pw-h2cw-w3vq",
+          "severity": "high",
+          "cwe": [
+            "CWE-400",
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.4,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:N/A:H"
+          },
+          "range": "<9.0.1"
+        },
+        "boom",
+        "cryptiles",
+        "hoek",
+        "sntp"
+      ],
+      "effects": [
+        "request"
+      ],
+      "range": "<=9.0.0",
+      "nodes": [
+        "node_modules/hawk"
+      ],
+      "fixAvailable": false
+    },
+    "hoek": {
+      "name": "hoek",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1093855,
+          "name": "hoek",
+          "dependency": "hoek",
+          "title": "Prototype Pollution in hoek",
+          "url": "https://github.com/advisories/GHSA-jp4x-w63m-7wgm",
+          "severity": "high",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 8.8,
+            "vectorString": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<4.2.1"
+        },
+        {
+          "source": 1096410,
+          "name": "hoek",
+          "dependency": "hoek",
+          "title": "hoek subject to prototype pollution via the clone function.",
+          "url": "https://github.com/advisories/GHSA-c429-5p7v-vgjp",
+          "severity": "high",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 8.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<=6.1.3"
+        }
+      ],
+      "effects": [
+        "boom",
+        "hawk",
+        "sntp"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/hoek"
+      ],
+      "fixAvailable": false
+    },
+    "jshint": {
+      "name": "jshint",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "cli",
+        "minimatch",
+        "shelljs",
+        "underscore"
+      ],
+      "effects": [
+        "gear-lib"
+      ],
+      "range": "0.5.0 || 0.6.0 - 2.13.3",
+      "nodes": [
+        "node_modules/gear-lib/node_modules/jshint"
+      ],
+      "fixAvailable": false
+    },
+    "jslint": {
+      "name": "jslint",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "glob"
+      ],
+      "effects": [
+        "gear-lib"
+      ],
+      "range": "0.3.0 - 0.9.8",
+      "nodes": [
+        "node_modules/jslint"
+      ],
+      "fixAvailable": false
+    },
+    "knox": {
+      "name": "knox",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "debug",
+        "xml2js"
+      ],
+      "effects": [
+        "gear-lib"
+      ],
+      "range": ">=0.4.0",
+      "nodes": [
+        "node_modules/knox"
+      ],
+      "fixAvailable": false
+    },
+    "less": {
+      "name": "less",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "clean-css",
+        "mime",
+        "request"
+      ],
+      "effects": [
+        "gear-lib"
+      ],
+      "range": "1.4.0-b1 - 2.6.1 || 2.7.2 - 3.11.3",
+      "nodes": [
+        "node_modules/less"
+      ],
+      "fixAvailable": false
+    },
+    "mime": {
+      "name": "mime",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1093780,
+          "name": "mime",
+          "dependency": "mime",
+          "title": "mime Regular Expression Denial of Service when MIME lookup performed on untrusted user input",
+          "url": "https://github.com/advisories/GHSA-wrvr-8mpx-r7pp",
+          "severity": "high",
+          "cwe": [
+            "CWE-400"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<1.4.1"
+        }
+      ],
+      "effects": [
+        "form-data",
+        "less"
+      ],
+      "range": "<1.4.1",
+      "nodes": [
+        "node_modules/mime"
+      ],
+      "fixAvailable": false
+    },
+    "minimatch": {
+      "name": "minimatch",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1093710,
+          "name": "minimatch",
+          "dependency": "minimatch",
+          "title": "Regular Expression Denial of Service in minimatch",
+          "url": "https://github.com/advisories/GHSA-hxm2-r34f-qmc5",
+          "severity": "high",
+          "cwe": [
+            "CWE-400"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<3.0.2"
+        },
+        {
+          "source": 1096485,
+          "name": "minimatch",
+          "dependency": "minimatch",
+          "title": "minimatch ReDoS vulnerability",
+          "url": "https://github.com/advisories/GHSA-f8q6-p94x-37v3",
+          "severity": "high",
+          "cwe": [
+            "CWE-400",
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<3.0.5"
+        }
+      ],
+      "effects": [
+        "glob",
+        "jshint"
+      ],
+      "range": "<=3.0.4",
+      "nodes": [
+        "node_modules/gear-lib/node_modules/jshint/node_modules/minimatch",
+        "node_modules/gear-lib/node_modules/minimatch",
+        "node_modules/jslint/node_modules/minimatch"
+      ],
+      "fixAvailable": false
+    },
+    "qs": {
+      "name": "qs",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1087527,
+          "name": "qs",
+          "dependency": "qs",
+          "title": "Prototype Pollution Protection Bypass in qs",
+          "url": "https://github.com/advisories/GHSA-gqgv-6jq5-jjj9",
+          "severity": "high",
+          "cwe": [
+            "CWE-20"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<6.0.4"
+        },
+        {
+          "source": 1096467,
+          "name": "qs",
+          "dependency": "qs",
+          "title": "qs vulnerable to Prototype Pollution",
+          "url": "https://github.com/advisories/GHSA-hrpp-h998-j3pp",
+          "severity": "high",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<6.2.4"
+        }
+      ],
+      "effects": [
+        "request"
+      ],
+      "range": "<=6.2.3",
+      "nodes": [
+        "node_modules/qs"
+      ],
+      "fixAvailable": false
+    },
+    "request": {
+      "name": "request",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1093762,
+          "name": "request",
+          "dependency": "request",
+          "title": "Remote Memory Exposure in request",
+          "url": "https://github.com/advisories/GHSA-7xfp-9c55-5vqj",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-201"
+          ],
+          "cvss": {
+            "score": 5.9,
+            "vectorString": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+          },
+          "range": ">=2.2.6 <2.47.0"
+        },
+        {
+          "source": 1096727,
+          "name": "request",
+          "dependency": "request",
+          "title": "Server-Side Request Forgery in Request",
+          "url": "https://github.com/advisories/GHSA-p8p7-x288-28g6",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-918"
+          ],
+          "cvss": {
+            "score": 6.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+          },
+          "range": "<=2.88.2"
+        },
+        "form-data",
+        "hawk",
+        "qs",
+        "tunnel-agent"
+      ],
+      "effects": [
+        "less"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/request"
+      ],
+      "fixAvailable": false
+    },
+    "rollup-plugin-terser": {
+      "name": "rollup-plugin-terser",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "serialize-javascript"
+      ],
+      "effects": [],
+      "range": "3.0.0 || >=4.0.4",
+      "nodes": [
+        "node_modules/rollup-plugin-terser"
+      ],
+      "fixAvailable": {
+        "name": "rollup-plugin-terser",
+        "version": "4.0.3",
+        "isSemVerMajor": true
+      }
+    },
+    "serialize-javascript": {
+      "name": "serialize-javascript",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1102339,
+          "name": "serialize-javascript",
+          "dependency": "serialize-javascript",
+          "title": "Cross-site Scripting (XSS) in serialize-javascript",
+          "url": "https://github.com/advisories/GHSA-76p7-773f-r4q5",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-79"
+          ],
+          "cvss": {
+            "score": 5.4,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+          },
+          "range": "<6.0.2"
+        }
+      ],
+      "effects": [
+        "rollup-plugin-terser"
+      ],
+      "range": "<6.0.2",
+      "nodes": [
+        "node_modules/serialize-javascript"
+      ],
+      "fixAvailable": {
+        "name": "rollup-plugin-terser",
+        "version": "4.0.3",
+        "isSemVerMajor": true
+      }
+    },
+    "shelljs": {
+      "name": "shelljs",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1088208,
+          "name": "shelljs",
+          "dependency": "shelljs",
+          "title": "Improper Privilege Management in shelljs",
+          "url": "https://github.com/advisories/GHSA-64g7-mvw6-v9qj",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-269"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<0.8.5"
+        },
+        {
+          "source": 1095126,
+          "name": "shelljs",
+          "dependency": "shelljs",
+          "title": "Improper Privilege Management in shelljs",
+          "url": "https://github.com/advisories/GHSA-4rq4-32rv-6wp6",
+          "severity": "high",
+          "cwe": [
+            "CWE-269"
+          ],
+          "cvss": {
+            "score": 7.1,
+            "vectorString": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H"
+          },
+          "range": "<0.8.5"
+        }
+      ],
+      "effects": [
+        "jshint"
+      ],
+      "range": "<=0.8.4",
+      "nodes": [
+        "node_modules/shelljs"
+      ],
+      "fixAvailable": false
+    },
+    "shifter": {
+      "name": "shifter",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        "gear-lib"
+      ],
+      "effects": [],
+      "range": ">=0.0.13",
+      "nodes": [
+        "node_modules/shifter"
+      ],
+      "fixAvailable": false
+    },
+    "sntp": {
+      "name": "sntp",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "hoek"
+      ],
+      "effects": [
+        "hawk"
+      ],
+      "range": "0.0.0 || 0.1.1 - 2.0.0",
+      "nodes": [
+        "node_modules/sntp"
+      ],
+      "fixAvailable": false
+    },
+    "tunnel-agent": {
+      "name": "tunnel-agent",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1085744,
+          "name": "tunnel-agent",
+          "dependency": "tunnel-agent",
+          "title": "Memory Exposure in tunnel-agent",
+          "url": "https://github.com/advisories/GHSA-xc7v-wxcw-j472",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-200"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<0.6.0"
+        }
+      ],
+      "effects": [
+        "request"
+      ],
+      "range": "<0.6.0",
+      "nodes": [
+        "node_modules/tunnel-agent"
+      ],
+      "fixAvailable": false
+    },
+    "uglify-js": {
+      "name": "uglify-js",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1091686,
+          "name": "uglify-js",
+          "dependency": "uglify-js",
+          "title": "Regular Expression Denial of Service in uglify-js",
+          "url": "https://github.com/advisories/GHSA-c9f4-xj24-8jqx",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<2.6.0"
+        },
+        {
+          "source": 1091710,
+          "name": "uglify-js",
+          "dependency": "uglify-js",
+          "title": "Incorrect Handling of Non-Boolean Comparisons During Minification in uglify-js",
+          "url": "https://github.com/advisories/GHSA-34r7-q49f-h37c",
+          "severity": "critical",
+          "cwe": [
+            "CWE-670",
+            "CWE-1254"
+          ],
+          "cvss": {
+            "score": 9.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<2.4.24"
+        }
+      ],
+      "effects": [
+        "gear-lib",
+        "handlebars"
+      ],
+      "range": "<=2.5.0",
+      "nodes": [
+        "node_modules/gear-lib/node_modules/handlebars/node_modules/uglify-js",
+        "node_modules/gear-lib/node_modules/uglify-js"
+      ],
+      "fixAvailable": false
+    },
+    "underscore": {
+      "name": "underscore",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1095097,
+          "name": "underscore",
+          "dependency": "underscore",
+          "title": "Arbitrary Code Execution in underscore",
+          "url": "https://github.com/advisories/GHSA-cf4h-3jhx-xvhq",
+          "severity": "critical",
+          "cwe": [
+            "CWE-94"
+          ],
+          "cvss": {
+            "score": 9.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": ">=1.3.2 <1.12.1"
+        }
+      ],
+      "effects": [
+        "jshint"
+      ],
+      "range": "1.3.2 - 1.12.0",
+      "nodes": [
+        "node_modules/gear-lib/node_modules/underscore"
+      ],
+      "fixAvailable": false
+    },
+    "xml2js": {
+      "name": "xml2js",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096693,
+          "name": "xml2js",
+          "dependency": "xml2js",
+          "title": "xml2js is vulnerable to prototype pollution",
+          "url": "https://github.com/advisories/GHSA-776f-qx25-q3cc",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          },
+          "range": "<0.5.0"
+        }
+      ],
+      "effects": [
+        "knox"
+      ],
+      "range": "<0.5.0",
+      "nodes": [
+        "node_modules/knox/node_modules/xml2js"
+      ],
+      "fixAvailable": false
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 1,
+      "moderate": 4,
+      "high": 17,
+      "critical": 6,
+      "total": 28
+    },
+    "dependencies": {
+      "prod": 10,
+      "dev": 1144,
+      "optional": 57,
+      "peer": 0,
+      "peerOptional": 0,
+      "total": 1153
+    }
+  }
+}

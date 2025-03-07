@@ -1,5 +1,5 @@
 {
-  "name": "Moodle",
+  "name": "moodle",
   "private": true,
   "description": "Moodle",
   "scripts": {
@@ -43,7 +43,7 @@
     "jstoxml": "^3.2.3",
     "npm-run-all": "^4.1.5",
     "postcss-scss": "^4.0.9",
-    "rollup-plugin-terser": "^4.0.3",
+    "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.58.3",
     "semver": "^7.7.1",
     "shifter": "https://github.com/andrewnicols/shifter/archive/v1.2.0_moodle-0.tar.gz",
@@ -62,5 +62,29 @@
     "not op_mini all",
     "not Opera > 0",
     "not dead"
-  ]
+  ],
+  "dependencies": {
+    "datatables.net": "^2.2.2",
+    "datatables.net-bs4": "^2.2.2",
+    "datatables.net-buttons": "^3.2.2",
+    "datatables.net-buttons-bs4": "^3.2.2",
+    "datatables.net-responsive": "^3.0.4",
+    "xml2js": "^0.6.2"
+  },
+  "version": "1.0.0",
+  "main": "Gruntfile.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulkennethsq1/moodle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulkennethsq1/moodle/issues"
+  },
+  "homepage": "https://github.com/paulkennethsq1/moodle#readme"
 }

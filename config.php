@@ -24,6 +24,7 @@ $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
 
+
 require_once(__DIR__ . '/lib/setup.php');
 
 // @error_reporting(E_ALL | E_STRICT);

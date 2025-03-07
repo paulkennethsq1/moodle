@@ -19,10 +19,9 @@
  * @copyright 2025, sq1 cybersecurity
  */
 
- require_once('/var/www/html/moodle/config.php');
+ require_once(dirname(__FILE__) . '/../../config.php');
+ require_once($CFG->dirroot . '/local/reports/lib.php');
 
-
-// require_once($CFG->dirroot . '/local/keka/lib.php');
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -30,18 +29,12 @@ require_login();
 
 $PAGE->set_url(new moodle_url('/local/reports/index.php'));
 
-$PAGE->set_title(get_string('pluginname', 'local_report'));
-// $PAGE->set_pagelayout('admininistrator');
-// $id = optional_param('id', null, PARAM_TEXT);
+$PAGE->set_title('Course Reports');
 
 echo $OUTPUT->header();
-$hash = array(
-    'report' => array(
-        array('value' => 'hippa', 'label' => 'HIPPA'),
-    )
-);
-
-
+$hash = [
+    'courses' => local_reports_get_courses(),
+];
 
 echo $OUTPUT->render_from_template('local_reports/index', $hash);
 $PAGE->requires->js_call_amd('local_reports/index', 'init');

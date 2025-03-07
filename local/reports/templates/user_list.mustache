@@ -1,0 +1,56 @@
+<!-- Include jQuery first -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Then include DataTables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<div class="local_reports_user_list" id="local_reports_user_list">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6">
+                    <div class="box-title">
+                        Hippa Course User List
+                    </div>
+                </div>
+                <div class="col-6 text-right">
+                    <!-- Optional: Add buttons or filters here -->
+                </div>
+            </div>
+
+            <div class="pt-3">
+                <table id="userTable" class="table display nowrap" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>{{#str}}name{{/str}}</th>
+                            <th>{{#str}}email{{/str}}</th>
+                            <th>Course started on</th>
+                            <th>Course completed on</th>
+                            <th>Total score</th>
+                            <th>{{#str}}actions{{/str}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#users}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td>{{email}}</td>
+                            <td>{{course_start}}</td>
+                            <td>{{course_complete}}</td>
+                            <td>{{total_score}}</td>
+                            <td>
+                                <a href="{{action_url}}" class="btn btn-primary btn-sm">{{#str}}view{{/str}}</a>
+                            </td>
+                        </tr>
+                        {{/users}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  
+</script>
