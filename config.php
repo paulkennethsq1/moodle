@@ -24,6 +24,9 @@ $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
 
+$CFG->additionaljavascripts = [
+  'https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'
+];
 
 require_once(__DIR__ . '/lib/setup.php');
 

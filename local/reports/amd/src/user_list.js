@@ -1,55 +1,99 @@
-define([
-    'jquery',
-    'core/notification',
-    'core/ajax',
-    'core/url',
-    'datatables.net',
-    'datatables.net-bs4',
-    'datatables.net-buttons',
-    'datatables.net-buttons-bs4',
-    'datatables.net-buttons-colvis',
-    'datatables.net-buttons-print',
-    'datatables.net-buttons-html5',
-    'datatables.net-responsive',
-    'datatables.net-responsive-bs4'
-], function(
-    $,
-    notification,
-    ajax,
-    moodleurl
-) {
-    var userList = {
-        init: function(id) {
-            var table = $('#userTable').DataTable({
+define(['jquery', 'core/ajax', 'core/str','core/url', 'https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'], 
+    function($, ajax, str,moodleurl) {
+    
+    var index = {
+        dom: {
+            main: null,
+        },
+
+        variables: {
+            dataTableReference: null,
+        },
+
+        actions: {
+            getString: function(id) {
+                index.variables.id = id;
+                str.get_strings([
+                ]).done(function() {
+                    index.init();
+                });
+            },
+        },
+
+        init: function() {
+        
+            index.variables.dataTableReference = $('#userTable').DataTable({
                 responsive: true,
-                dom: 'Bfrtip',
-                buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
-                processing: true,
                 serverSide: true,
-                ajax: function(data, callback) {
-                    data.id = id;
-                    ajax.call([{
-                        methodname: 'local_reports_get_user_list',
-                        args: data
-                    }])[0].done(callback).fail(notification.exception);
+                processing: true,
+                pageLength: 10,
+                order: [[0, "DESC"]], 
+                ajax: function(data, callback, settings) {  
+                    var courseid = index.variables.id;
+                    console.log("Course ID:", courseid);
+                    var promises = ajax.call([{
+                        methodname: "local_reports_get_users",
+                        args: { courseid: courseid }
+                    }]);
+                
+                    promises[0].done(function(response) {
+                        console.log("Response from AJAX:", response);
+                
+                        if (typeof callback === "function") {
+                            callback({ data: response.users || [] }); // Ensure it's an array
+                        } else {
+                            console.error("Callback is not a function!", callback);
+                        }
+                    }).fail(function(jqXHR, textStatus, errorThrown) {
+                        console.error("AJAX Error:", textStatus, errorThrown, jqXHR.responseText);
+                        if (typeof callback === "function") {
+                            callback({ data: [] }); 
+                        }
+                    });
                 },
+                
                 columns: [
-                    {data: 'name'},
-                    {data: 'email'},
-                    {data: 'course_start'},
-                    {data: 'course_complete'},
-                    {data: 'total_score'},
-                    {
-                        data: 'id',
+                    { 
+                        data: "id",
+                        visible: false
+                     },
+                    { 
+                        data: "firstname",
+                        render: function(data, type, row) {
+                            return data + " " + row.lastname;
+                        }
+                    },
+                    { data: "email" },
+                    { data: "Coursestatus" },
+                    { data: "startdate" },
+                    { data: "completiondate" },
+                    { data: "grade" },
+                    
+                    { 
+                        data: "id",
                         orderable: false,
-                        render: function(data) {
-                            return `<a href="${moodleurl.relativeUrl('/local/reports/view_user.php?id=' + data)}" class="btn btn-primary btn-sm">View</a>`;
+                        searchable: false,
+                        render: function(data, type, row) {
+                            return `
+                                <i class="fa fa-eye view" data-value="${data}" title="view" aria-hidden="true"></i> 
+                                
+                            `;
                         }
                     }
                 ]
             });
-        }
+
+            $('#userTable tbody').on('click', '.view', function() {
+                var userId = $(this).data('value'); 
+                window.location = moodleurl.relativeUrl(
+                    '/local/reports/user_report.php?id=' + userId
+                );
+            });
+            
+        },
     };
 
-    return userList;
+    return {
+        init: index.actions.getString,
+    };
 });

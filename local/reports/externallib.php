@@ -43,5 +43,34 @@ class local_report_external extends external_api {
         return new external_value(PARAM_TEXT, '');
     }
 
-    
+
+
+    public static function get_users_parameters() {
+        return new external_function_parameters(array(
+           'courseid' => new external_value(PARAM_INT, 'courseid'),
+        ));
+    }
+
+    public static function get_users($courseid) {
+        return local_reports_get_users($courseid);
+       
+    }
+
+    public static function get_users_returns() {
+        return new external_single_structure([
+            'users' => new external_multiple_structure(
+                new external_single_structure([
+                    'id' => new external_value(PARAM_INT, 'id'),
+                    'firstname' => new external_value(PARAM_TEXT, 'firstname'),
+                    'lastname' => new external_value(PARAM_TEXT, 'lastname'),
+                    'email' => new external_value(PARAM_TEXT, 'email'),
+                    'grade' => new external_value(PARAM_FLOAT, 'grade', VALUE_OPTIONAL),
+                    'Coursename' => new external_value(PARAM_TEXT, 'Coursename'),
+                    'startdate' => new external_value(PARAM_TEXT, 'startdate'),
+                    'completiondate' => new external_value(PARAM_TEXT, 'completiondate'),
+                    'Coursestatus' => new external_value(PARAM_TEXT, 'Coursestatus')
+                ])
+            )
+        ]);
+    } 
 }

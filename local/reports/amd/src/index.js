@@ -1,14 +1,3 @@
-// // File: local/reports/amd/src/index.js
-// define(['jquery'], function($) {
-//     return {
-//         init: function() {
-//             index.dom.main = $(document).find("#report-container");
-//             index.dom.addSendingProfile = index.dom.main.find(".add_sending_profile");
-
-//             console.log('local_reports/index module initialized.');
-//         }
-//     };
-// });
 
 define([
   'jquery',
@@ -30,6 +19,7 @@ define([
           dom: {
               main: null,
               submit: null,
+              course: null,
           },
 
         //   langs: {
@@ -339,45 +329,47 @@ define([
             //       });
             //   },
 
-              url: function() {
-                //   stLoader.showLoader();
-                  var promises = ajax.call([
-                      {
-                          methodname: "local_reports_course",
-                              args: {
-                                  idnumber: 1234,
-                              },
-                      },
-                  ]);
-                  promises[0].done(function() {
-                    //   index.dom.sendTestMailModal.modal('hide');
-                    //   if () {
-                    // //       notification.addNotification({
-                    // //           message: index.langs.mailSent,
-                    // //           type: "success",
-                    // //       });
-                    //   } else {
-                    //     //   notification.addNotification({
-                    //     //       message: index.langs.unableToSendMail,
-                    //     //       type: "error",
-                    //     //   });
-                    //   }
+              // url: function() {
+              //   //   stLoader.showLoader();
+              //     var promises = ajax.call([
+              //         {
+              //             methodname: "local_reports_course",
+              //                 args: {
+              //                     idnumber: 1234,
+              //                 },
+              //         },
+              //     ]);
+              //     promises[0].done(function() {
+              //       //   index.dom.sendTestMailModal.modal('hide');
+              //       //   if () {
+              //       // //       notification.addNotification({
+              //       // //           message: index.langs.mailSent,
+              //       // //           type: "success",
+              //       // //       });
+              //       //   } else {
+              //       //     //   notification.addNotification({
+              //       //     //       message: index.langs.unableToSendMail,
+              //       //     //       type: "error",
+              //       //     //   });
+              //       //   }
 
-                  });
-                //   .fail(function() {
-                //       notification.addNotification({
-                //           message: index.langs.somethingWentWrong,
-                //           type: "error",
-                //       });
-                //   });
-              }
+              //     });
+              //   //   .fail(function() {
+              //   //       notification.addNotification({
+              //   //           message: index.langs.somethingWentWrong,
+              //   //           type: "error",
+              //   //       });
+              //   //   });
+              // }
           },
           init: function() {
               index.dom.main = $(document).find("#report-container");
-              index.dom.submit = index.dom.main.find("button");    
+              index.dom.submit = index.dom.main.find("#button");  
+              index.dom.course = index.dom.main.find("#report_select");  
               index.dom.submit.on("click", function() {
+                let courseid = index.dom.course.val(); 
                 window.location = moodleurl.relativeUrl(
-                  '/local/reports/user_list.php?id=' + 3
+                  '/local/reports/user_list.php?id=' + courseid
               );
 
               });

@@ -32,6 +32,14 @@ $functions = array(
         'type'        => 'write',
         'ajax'        => true, // Set to true if the function is available for AJAX calls.
     ),
+    'local_reports_get_users' => array(
+        'classname'   => 'local_report_external',
+        'methodname'  => 'get_users',
+        'classpath'   => 'local/reports/externallib.php',
+        'description' => 'Fetch user list for DataTables',
+        'type'        => 'write',
+        'ajax'        => true, // Set to true if the function is available for AJAX calls.
+    ),
 );
 
 // Define the services to install as pre-built services.
@@ -40,6 +48,7 @@ $services = array(
     'Local Reports' => array(
         'functions' => array(
             'local_reports_course',
+            'local_reports_get_users',
         ),
         'restrictedusers' => 0,
         'enabled' => 1,

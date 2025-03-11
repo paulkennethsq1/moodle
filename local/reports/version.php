@@ -24,7 +24,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin = new stdClass();
 $plugin->component = 'local_reports'; // Use the correct plugin name
-$plugin->version = 2025030503;
+$plugin->version = 2025030506;
 $plugin->requires = 2021051700; // Minimum Moodle version (adjust if needed)
 $plugin->maturity = MATURITY_STABLE;
 $plugin->release = 'v1.0';

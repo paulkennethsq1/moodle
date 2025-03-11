@@ -22,3 +22,9 @@ defined("MOODLE_INTERNAL") || die();
 
 $string["pluginname"] = "Course Reports";
 $string["plugin"] = "Course Reports";
+$string["course_reports"] = "Course Reports";
+$string["course_status"] = "Course Status";
+$string["completion_date"] = "Completed On";
+$string["total_score"] = "Total Score";
+$string["feedback"] = "Feedback";
+$string["start_date"] = "Started On";
